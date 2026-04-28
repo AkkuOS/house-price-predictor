@@ -33,10 +33,10 @@ project/
 pip install -r requirements.txt
 streamlit run app.py
 
-## 📊 Model Info
+📊 Model Info
 Algorithm: Linear Regression
 Type: Supervised Learning (Regression)
 👨‍💻 Author
 
-Abhijith Os
+Abhijith
 
