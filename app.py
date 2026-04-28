@@ -35,6 +35,8 @@ st.write("### Enter property details below")
 st.image("https://images.unsplash.com/photo-1560185127-6ed189bf02f4")
 tab1, tab2 = st.tabs(["🏠 Predict", "📊 About"])
 
+tab1, tab2 = st.tabs(["🏠 Predict", "📊 About"])
+
 with tab1:
     # Layout using columns
     col1, col2 = st.columns(2)
@@ -55,7 +57,9 @@ with tab1:
             prediction = model.predict(input_data)[0]
 
         st.metric("💰 Estimated Price", f"₹ {prediction:,.0f}")
-    with tab2:
+
+
+with tab2:
     st.header("📊 About This Model")
 
     st.write("""
