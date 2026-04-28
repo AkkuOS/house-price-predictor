@@ -35,8 +35,6 @@ st.write("### Enter property details below")
 st.image("https://images.unsplash.com/photo-1560185127-6ed189bf02f4")
 tab1, tab2 = st.tabs(["🏠 Predict", "📊 About"])
 
-tab1, tab2 = st.tabs(["🏠 Predict", "📊 About"])
-
 with tab1:
     # Layout using columns
     col1, col2 = st.columns(2)
