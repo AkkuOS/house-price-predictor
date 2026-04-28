@@ -32,6 +32,7 @@ st.markdown("""
 # Title
 st.markdown("<h1 style='text-align: center;'>🏠 House Price Predictor</h1>", unsafe_allow_html=True)
 st.write("### Enter property details below")
+st.image("https://images.unsplash.com/photo-1560185127-6ed189bf02f4")
 
 # Layout using columns
 col1, col2 = st.columns(2)
@@ -49,21 +50,20 @@ st.markdown("---")
 
 # Predict button
 if st.button("Predict Price"):
-    input_data = np.array([[area, bedrooms, bathrooms, stories]])
-    prediction = model.predict(input_data)[0]
+    with st.spinner("Predicting..."):
+        input_data = np.array([[area, bedrooms, bathrooms, stories]])
+        prediction = model.predict(input_data)[0]
 
-    st.success(f"💰 Estimated Price: ₹ {prediction:,.2f}")
+    st.metric("💰 Estimated Price", f"₹ {prediction:,.0f}")
 
 # Sidebar
 st.sidebar.header("📘 About")
 st.sidebar.write("""
 This app predicts house prices using a Machine Learning model.
 
-**Features used:**
+Features:
 - Area
 - Bedrooms
 - Bathrooms
 - Stories
-
-Built with Streamlit.
 """)
