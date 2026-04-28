@@ -1,11 +1,11 @@
-# 🏠 House Price Predictor
+#  House Price Predictor
 
 This is a machine learning web app that predicts house prices based on user inputs.
 
-## 🚀 Live Demo
+##  Live Demo
 https://house-price-predictor-c3f9lvk48sd9elbxp39rqu.streamlit.app/
 
-## 📌 Features
+##  Features
 - Predict house prices based on:
   - Area
   - Bedrooms
@@ -14,29 +14,29 @@ https://house-price-predictor-c3f9lvk48sd9elbxp39rqu.streamlit.app/
 - Interactive UI using Streamlit
 - Real-time predictions
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - Python
 - Streamlit
 - Scikit-learn
 - Pandas
 - NumPy
 
-## 📂 Project Structure
+##  Project Structure
 project/
 │── app.py
 │── model.pkl
 │── requirements.txt
 
 
-## ▶️ How to Run Locally
+##  How to Run Locally
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 
-📊 Model Info
+ Model Info
 Algorithm: Linear Regression
 Type: Supervised Learning (Regression)
-👨‍💻 Author
+ Author
 
 Abhijith
 ```
