@@ -33,37 +33,44 @@ st.markdown("""
 st.markdown("<h1 style='text-align: center;'>🏠 House Price Predictor</h1>", unsafe_allow_html=True)
 st.write("### Enter property details below")
 st.image("https://images.unsplash.com/photo-1560185127-6ed189bf02f4")
+tab1, tab2 = st.tabs(["🏠 Predict", "📊 About"])
 
-# Layout using columns
-col1, col2 = st.columns(2)
+with tab1:
+    # Layout using columns
+    col1, col2 = st.columns(2)
 
-with col1:
-    area = st.slider("Area (sq ft)", 500, 10000, 1500)
-    bedrooms = st.selectbox("Bedrooms", [1,2,3,4,5])
+    with col1:
+        area = st.slider("Area (sq ft)", 500, 10000, 1500)
+        bedrooms = st.selectbox("Bedrooms", [1,2,3,4,5])
 
-with col2:
-    bathrooms = st.selectbox("Bathrooms", [1,2,3,4])
-    stories = st.selectbox("Stories", [1,2,3])
+    with col2:
+        bathrooms = st.selectbox("Bathrooms", [1,2,3,4])
+        stories = st.selectbox("Stories", [1,2,3])
 
-# Divider
-st.markdown("---")
+    st.markdown("---")
 
-# Predict button
-if st.button("Predict Price"):
-    with st.spinner("Predicting..."):
-        input_data = np.array([[area, bedrooms, bathrooms, stories]])
-        prediction = model.predict(input_data)[0]
+    if st.button("Predict Price"):
+        with st.spinner("Predicting..."):
+            input_data = np.array([[area, bedrooms, bathrooms, stories]])
+            prediction = model.predict(input_data)[0]
 
-    st.metric("💰 Estimated Price", f"₹ {prediction:,.0f}")
+        st.metric("💰 Estimated Price", f"₹ {prediction:,.0f}")
+    with tab2:
+    st.header("📊 About This Model")
+
+    st.write("""
+    This app predicts house prices using a Machine Learning model.
+
+    **Features used:**
+    - Area
+    - Bedrooms
+    - Bathrooms
+    - Stories
+
+    **Model:**
+    Linear Regression
+    """)
 
 # Sidebar
 st.sidebar.header("📘 About")
-st.sidebar.write("""
-This app predicts house prices using a Machine Learning model.
 
-Features:
-- Area
-- Bedrooms
-- Bathrooms
-- Stories
-""")
