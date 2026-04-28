@@ -71,6 +71,3 @@ with tab1:
     Linear Regression
     """)
 
-# Sidebar
-st.sidebar.header("📘 About")
-
