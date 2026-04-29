@@ -12,9 +12,27 @@ with open("model.pkl", "rb") as f:
 # Custom CSS
 st.markdown("""
 <style>
-.main {
-    background-color: #0e1117;
+.stApp {
+    background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+/* Optional: Add slight dark overlay for readability */
+.stApp::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 17, 23, 0.6);
+    z-index: -1;
+}
+
+/* Button styling */
 .stButton>button {
     background-color: #ff4b4b;
     color: white;
@@ -23,6 +41,8 @@ st.markdown("""
     width: 100%;
     font-size: 18px;
 }
+
+/* Input styling */
 .stNumberInput input {
     border-radius: 10px;
 }
