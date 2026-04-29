@@ -13,7 +13,7 @@ with open("model.pkl", "rb") as f:
 st.markdown("""
 <style>
 
-/* Create blurred background layer */
+/* Blurred background layer */
 .stApp::before {
     content: "";
     position: fixed;
@@ -25,12 +25,15 @@ st.markdown("""
     background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 
-    filter: blur(8px);  /* 👈 Blur here */
-    z-index: -1;
+    filter: blur(6px);   /* 👈 reduce blur */
+    transform: scale(1.05); /* 👈 prevents edge cut */
+
+    z-index: -2;
 }
 
-/* Optional overlay */
+/* Light overlay (VERY IMPORTANT — keep it light) */
 .stApp::after {
     content: "";
     position: fixed;
@@ -39,7 +42,8 @@ st.markdown("""
     width: 100%;
     height: 100%;
 
-    background-color: rgba(14, 17, 23, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);  /* 👈 lighter than before */
+
     z-index: -1;
 }
 
