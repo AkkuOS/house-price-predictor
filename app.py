@@ -12,35 +12,27 @@ with open("model.pkl", "rb") as f:
 # Custom CSS
 st.markdown("""
 <style>
-.stApp {
-    background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+
+/* Glass effect container */
+.glass {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 25px;
+    border-radius: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
 }
 
-/* Dark overlay to reduce image visibility */
-.stApp::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(14, 17, 23, 0.9);  /* 👈 50% opacity */
-    z-index: -1;
-}
-
-/* Button styling */
-.stButton>button {
-    background-color: #ff4b4b;
+/* Optional: make text cleaner */
+.glass label, .glass div {
     color: white;
-    border-radius: 10px;
-    height: 3em;
-    width: 100%;
-    font-size: 18px;
 }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -51,7 +43,8 @@ st.image("https://images.unsplash.com/photo-1560185127-6ed189bf02f4")
 tab1, tab2 = st.tabs(["🏠 Predict", "📊 About"])
 
 with tab1:
-    # Layout using columns
+    st.markdown('<div class="glass">', unsafe_allow_html=True)
+
     col1, col2 = st.columns(2)
 
     with col1:
@@ -70,6 +63,8 @@ with tab1:
             prediction = model.predict(input_data)[0]
 
         st.metric("💰 Estimated Price", f"₹ {prediction:,.0f}")
+
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 with tab2:
