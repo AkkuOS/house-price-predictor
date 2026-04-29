@@ -28,7 +28,7 @@ st.markdown("""
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(14, 17, 23, 0.5);  /* 👈 50% opacity */
+    background-color: rgba(14, 17, 23, 5);  /* 👈 50% opacity */
     z-index: -1;
 }
 
