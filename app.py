@@ -13,7 +13,7 @@ with open("model.pkl", "rb") as f:
 st.markdown("""
 <style>
 .stApp {
-    background-image: url("https://media.houseandgarden.co.uk/photos/66f2a3e9c5f02403e9deba9f/master/w_1024%2Cc_limit/Christian%2520Bense%2520Battersea13727.jpg");
+    background-image: url("back.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
