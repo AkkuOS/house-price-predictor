@@ -13,7 +13,7 @@ with open("model.pkl", "rb") as f:
 st.markdown("""
 <style>
 .stApp {
-    background-image: url("back.png");
+    background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600&auto=format&fit=crop&blur=50");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
