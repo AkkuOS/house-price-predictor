@@ -20,7 +20,7 @@ st.markdown("""
     background-attachment: fixed;
 }
 
-/* Optional: Add slight dark overlay for readability */
+/* Dark overlay to reduce image visibility */
 .stApp::before {
     content: "";
     position: fixed;
@@ -28,7 +28,7 @@ st.markdown("""
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(14, 17, 23, 0.6);
+    background-color: rgba(14, 17, 23, 0.5);  /* 👈 50% opacity */
     z-index: -1;
 }
 
@@ -40,11 +40,6 @@ st.markdown("""
     height: 3em;
     width: 100%;
     font-size: 18px;
-}
-
-/* Input styling */
-.stNumberInput input {
-    border-radius: 10px;
 }
 </style>
 """, unsafe_allow_html=True)
