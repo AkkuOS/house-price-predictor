@@ -72,7 +72,7 @@ with tab2:
     **Model:**
     Linear Regression
 
-    **Author**
+    **Author:**
     Abhijith Os
     """)
 
