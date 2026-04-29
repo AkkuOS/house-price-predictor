@@ -32,13 +32,12 @@ with tab1:
     col1, col2 = st.columns(2)
 
     with col1:
-        area = st.slider("Area (sq ft)", 500, 10000, 1500)
-        bedrooms = st.selectbox("Bedrooms", [1,2,3,4,5])
+        area = st.slider("**Area (sq ft)**", 500, 10000, 1500)
+        bedrooms = st.selectbox("**Bedrooms**", [1,2,3,4,5])
 
     with col2:
-        bathrooms = st.selectbox("Bathrooms", [1,2,3,4])
-        stories = st.selectbox("Stories", [1,2,3])
-
+       bathrooms = st.selectbox("**Bathrooms**", [1,2,3,4])
+       stories = st.selectbox("**Stories**", [1,2,3])
     st.markdown("---")
 
     if st.button("Predict Price"):
