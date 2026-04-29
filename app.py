@@ -12,15 +12,8 @@ with open("model.pkl", "rb") as f:
 # Custom CSS
 st.markdown("""
 <style>
-.stApp {
-    background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 
-/* Dark overlay to reduce image visibility */
+/* Create blurred background layer */
 .stApp::before {
     content: "";
     position: fixed;
@@ -28,19 +21,28 @@ st.markdown("""
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(14, 17, 23, 0.9);  /* 👈 50% opacity */
+
+    background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511");
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(8px);  /* 👈 Blur here */
     z-index: -1;
 }
 
-/* Button styling */
-.stButton>button {
-    background-color: #ff4b4b;
-    color: white;
-    border-radius: 10px;
-    height: 3em;
+/* Optional overlay */
+.stApp::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    font-size: 18px;
+    height: 100%;
+
+    background-color: rgba(14, 17, 23, 0.5);
+    z-index: -1;
 }
+
 </style>
 """, unsafe_allow_html=True)
 
