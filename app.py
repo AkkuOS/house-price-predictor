@@ -12,41 +12,12 @@ with open("model.pkl", "rb") as f:
 # Custom CSS
 st.markdown("""
 <style>
-
-/* Blurred background layer */
-.stApp::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511");
+.stApp {
+    background-image: url("https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600&auto=format&fit=crop&blur=50");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    filter: blur(6px);   /* 👈 reduce blur */
-    transform: scale(1.05); /* 👈 prevents edge cut */
-
-    z-index: -2;
 }
-
-/* Light overlay (VERY IMPORTANT — keep it light) */
-.stApp::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0, 0, 0, 0.2);  /* 👈 lighter than before */
-
-    z-index: -1;
-}
-
 </style>
 """, unsafe_allow_html=True)
 
