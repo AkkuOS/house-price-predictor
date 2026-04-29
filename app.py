@@ -42,7 +42,7 @@ st.markdown("""
     width: 100%;
     height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.3);  /* 👈 lighter than before */
+    background-color: rgba(0, 0, 0, 0.2);  /* 👈 lighter than before */
 
     z-index: -1;
 }
